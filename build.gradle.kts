@@ -10,6 +10,7 @@ repositories {
 val mockk = "1.12.3"
 
 dependencies {
+    implementation("io.reactivex.rxjava3:rxjava:3.1.8")
     testImplementation(kotlin("test"))
     testImplementation("io.mockk:mockk:$mockk")
     testImplementation("io.mockk:mockk-agent-jvm:$mockk")
@@ -26,6 +27,7 @@ kotlin {
 }
 
 pitest {
+    mutators.set(setOf("STRONGER","EXTENDED","KOTLIN_REMOVE_SORTED", "KOTLIN_REMOVE_DISTINCT"))
     pitestVersion.set("1.15.1")
     targetClasses.set(setOf("de.esolutions.*"))
     junit5PluginVersion.set("1.0.0")
