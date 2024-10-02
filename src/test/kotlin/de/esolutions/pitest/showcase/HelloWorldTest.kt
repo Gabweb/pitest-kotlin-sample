@@ -1,17 +1,18 @@
 package de.esolutions.pitest.showcase
 
-import io.mockk.mockk
-import io.mockk.verify
 import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
 
 class HelloWorldTest {
     @Test
     fun `should print Hello World`() {
-        val looper = mockk<Looper>(relaxed = true)
-        val cut = HelloWorld(looper)
+        val result = foo(false, true)
+        assertEquals("Bar", result)
+    }
 
-        cut.helloWorld()
-
-        verify { looper.dump(any(), any()) }
+    @Test
+    fun `should print Hello World2`() {
+        val result = foo(true, false)
+        assertEquals("Bar", result)
     }
 }

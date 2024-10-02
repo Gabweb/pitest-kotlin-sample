@@ -2,3 +2,5 @@ build
 .idea
 .gradle
 cdg-pitest-licence.txt
+arcmutate-licence.txt
+local.properties
